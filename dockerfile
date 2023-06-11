@@ -1,17 +1,20 @@
-# Используйте базовый образ Python
+# Базовый образ Python
 FROM python:3.9
 
-# Установите рабочую директорию внутри контейнера
-WORKDIR /app
+# Установка переменных окружения
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
 
-# Скопируйте файлы зависимостей в контейнер
-COPY requirements.txt .
+# Установка рабочей директории
+WORKDIR /code
 
-# Установите зависимости
+# Установка зависимостей проекта
+COPY requirements.txt /code/
 RUN pip install -r requirements.txt
 
-# Скопируйте все файлы проекта в контейнер
-COPY . .
+# Копирование файлов проекта в рабочую директорию
+COPY . /code/
 
-# Запустите команду для запуска Django сервера
-CMD python manage.py runserver 0.0.0.0:8000
+# Запуск миграций и запуск сервера Django
+CMD python manage.py migrate && python manage.py runserver 0.0.0.0:8000
+

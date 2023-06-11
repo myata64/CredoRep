@@ -1,17 +1,21 @@
 version: '3'
 services:
-  django:
-    build: .
-    ports:
-      - "8500:8000"  # Порт хоста:порт контейнера Django
-    depends_on:
-      - db
-
   db:
     image: postgres
-    ports:
-      - "8000:5432"  # Порт хоста:порт контейнера PostgreSQL
     environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=clothing_store
+      POSTGRES_DB: clothing_store
+      POSTGRES_USER: myata64
+      POSTGRES_PASSWORD: pass1234
+    ports:
+      - '5433:5432'
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - '8000:8000'
+    depends_on:
+      - db
