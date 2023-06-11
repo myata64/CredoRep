@@ -23,4 +23,5 @@ app_name = 'account'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('account/', views.account, name='account'),
+    path('', views.home, name='home')
 ]

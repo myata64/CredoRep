@@ -16,6 +16,12 @@
 - Откройте веб-браузер и перейдите по адресу http://localhost:8000 </br>
 
 
+- Работа внутри БД: </br>
+`sudo docker-compose exec db psql -U myata64 -d clothing_store` </br>
+`\dt` - просмотр таблиц </br>
+`\d <table_name>` -  просмотр схемы таблицы
+
+
 - интерфейс контейнера БД:
   `docker-compose exec db psql -U postgres` </br>
 - вход в режим работы с БД:
@@ -34,10 +40,14 @@
 - После можно устанавливать сам модуль **psycopg2**: </br>
   `pip3 install psycopg2` </br>
 - Чтобы сделать миграции должен быть запущен postgres-контейнер: </br>
-  `sudo docker-compose up` </br>
+  `sudo docker-compose up -d` </br>
 - Ну и теперь мы можем делать миграции (докер будет выводить в консоль журнал, потому следющую команду нужно выполнять в другой консоли): </br>
   `sudo docker-compose exec web python manage.py migrate`
 
+
+# Django Admin
+login: `admin` </br> 
+password: `pass1234`
 # Создание БД и таблиц (не обязательно)
 
 `CREATE DATABASE your_database;` </br>
