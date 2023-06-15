@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Urban Sketart';
-    src: url('/credo/staticstatic/fonts/urban-sketart.regular.ttf') format('truetype');
+    src: url('/credo/static/fonts/urban-sketart.regular.ttf') format('truetype');
 }
 
 /* Box sizing rules */
@@ -49,7 +49,7 @@ body {
     scroll-behavior: smooth;
     text-rendering: optimizeSpeed;
     line-height: 1.5;
-    margin: 0px;
+    margin: 0;
 }
 
 /* Remove list styles on ul, ol elements with a class attribute */
@@ -145,7 +145,7 @@ select {
 header {
     width: 100%;
     position: relative;
-    max-height: fixed;
+    /*max-height: fixed;*/
 }
 
 .container {
@@ -269,7 +269,6 @@ section {
     cursor: pointer;
     z-index: 999;
     top: 380px;
-    width: 26px;
     width: 60px;
     height: 80px;
 }
@@ -282,7 +281,7 @@ section {
     right: 38px;
 }
 
-/* FOteer */
+/* Footer */
 
 footer {
     width: 100%;
