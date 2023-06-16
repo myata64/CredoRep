@@ -22,6 +22,7 @@
 
     <!-- <script src="../credo/static/scripts/shadow.js"></script> -->
     <script src="{% static 'scripts/shadow.js' %}"></script>
+    <script src="{% static 'scripts/is_authenticated.js' %}"></script>
 </head>
 <body>
 <div class="page">
@@ -47,10 +48,29 @@
                     </a>
                 </ul>
             </div>
-            <div class="header_registration">
+            <!-- <div class="header_registration">
                 <a class="header_account-icon_link" href="{% url 'account' %}"><img class="header_account-icon"
-                                                                             src="{% static 'img/user.png' %}"
-                                                                             alt="sign-up"></a>
+                                                                                    src="{% static 'img/user.png' %}"
+                                                                                    alt="sign-up"></a> -->
+            <div class="menu">
+                <img class="header_account-icon" src="{% static 'img/user.png' %}" alt="Account">
+                <div class="list_menu">
+                    <ul>
+                        {% if user.is_authenticated %}
+                            <li><a href="#">Личные данные</a></li>
+                            <li><a href="#">Избранное</a></li>
+                            <li><a href="#">Корзина</a></li>
+                            <li><a href="#">Весь каталог</a></li>
+                            <li><a href="{% url 'logout' %}">Выход</a></li>
+                        {% else %}
+                            <li><a href="{% url 'entrance' %}">Войти</a></li>
+                            <li><a href="{% url 'register' %}">Регистрация</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+                <div class="footer_menu">
+                    <p>©Данные под хешем</p>
+                </div>
             </div>
             <div id="header_shadow" class="header_shadow"></div>
         </div>

@@ -12,8 +12,8 @@
         <div class="popup__close-area close-popup"></div>
         <div class="popup__content">
             <span class="popup__title">Вход</span>
-            <form class="popup__form" action="/entry" method="post">
-
+            <form class="popup__form" action="{% url 'entrance' %}" method="post">
+                {% csrf_token %}
                 <div class="popup__field">
                     <label class="popup__label" for="">Эл.почта</label>
                     <input maxlength="255" type="email" name="email" required="required" class="popup__input">
