@@ -15,8 +15,13 @@
                     <div class="popup__close-area close-popup"></div>
                     <div class="popup__content">
                         <span class="popup__title">Регистрация</span>
-                        <form class="popup__form" action="/submit" method="post">
-
+                        {% if messages %}
+                            {% for message in messages %}
+                                <div>{{ message }}</div>
+                            {% endfor %}
+                        {% endif %}
+                        <form class="popup__form" method="POST" action="{% url 'register' %}">
+                            {% csrf_token %}
                             <div class="popup__field">
                                 <label class="popup__label" for="">Эл.почта</label>
                                 <input maxlength="255" type="email" name="email" required="required"
@@ -31,7 +36,7 @@
 
                             <div class="popup__field">
                                 <label class="popup__label" for="">Подтвердите пароль</label>
-                                <input maxlength="255" type="password" name="password" required="required"
+                                <input maxlength="255" type="password" name="confirm_password" required="required"
                                        class="popup__input">
                             </div>
 
