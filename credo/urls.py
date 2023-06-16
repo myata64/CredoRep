@@ -19,10 +19,12 @@ from django.urls import path
 from . import views, settings
 from django.conf.urls.static import static
 
-app_name = 'account'
+app_name = 'credo'
 
 urlpatterns = [
                   path('admin/', admin.site.urls),
+                  path('', views.home, name='home'),
                   path('account/', views.account, name='account'),
-                  path('', views.home, name='home')
+                  path('entrance/', views.entrance, name='entrance'),
+                  path('registration/', views.registration, name='registration'),
               ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

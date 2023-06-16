@@ -7,3 +7,11 @@ def home(request):
 
 def account(request):
     return render(request, 'account.html')
+
+
+def entrance(request):
+    return render(request, 'entrance.html')
+
+
+def registration(request):
+    return render(request, 'registration.html')
