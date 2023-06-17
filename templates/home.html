@@ -29,9 +29,9 @@
     <header>
         <div id="hover" class="header_nav">
             <div class="container">
-                <a class="header_logo hover" href="home.html" id="logo">C R E D O</a>
+                <a class="header_logo hover" href="{% url 'home' %}" id="logo">C R E D O</a>
                 <ul class="header_list" id="menu">
-                    <a href='shoes.html' class="header_menu">
+                    <a href="{% url 'shoes' %}" class="header_menu">
                         <li>Обувь</li>
                     </a>
                     <a href="" class="header_menu">
@@ -112,9 +112,8 @@
 
     <footer class="footer">
         <nav>
-            <a href="home.html">HOME</a>
-            <a href="about.html">ABOUT</a>
-
+            <a href="{% url 'home' %}">HOME</a>
+            <a href="{% url 'home' %}">ABOUT</a>
         </nav>
         <div class="footer_icons">
             <h4>Купить можно тут</h4>

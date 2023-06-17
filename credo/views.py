@@ -18,6 +18,14 @@ def entrance(request):
     return render(request, 'entrance.html')
 
 
+def shoes(request):
+    return render(request, 'shoes.html')
+
+
+def newbalance(request):
+    return render(request, 'nb990.html')
+
+
 def register(request):
     if request.method == 'POST':
         username = request.POST['email']
