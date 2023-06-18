@@ -27,6 +27,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+]
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -38,8 +42,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'credo',
 ]
-AUTH_USER_MODEL = 'credo.User'
-
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -125,9 +127,9 @@ USE_TZ = True
 # STATIC_HOST = os.environ.get('/static', '')
 # STATIC_URL = STATIC_ROOT + '/static/'
 
-#STATICFILES_DIRS = [
+# STATICFILES_DIRS = [
 #    os.path.join(BASE_DIR, 'code/staticfiles/'),
-#]
+# ]
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static/'),

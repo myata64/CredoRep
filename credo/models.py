@@ -1,15 +1,15 @@
 from django.db import models
-from django.contrib.auth.models import AbstractUser
 
 
 # Пользователь
-class User(AbstractUser):
+class User(models.Model):
+    username = models.CharField(max_length=255)
+    email = models.EmailField(max_length=255)
     phone_number = models.CharField(max_length=20, default='')
-    last_login = models.DateTimeField(blank=True, null=True)
-    is_superuser = models.BooleanField(default=False)
-    class Meta:
-        verbose_name = 'Пользователь'
-        verbose_name_plural = 'Пользователи'
+    password = models.CharField(max_length=200, default=0)
+
+    def __str__(self):
+        return self.username
 
 
 # Товары
