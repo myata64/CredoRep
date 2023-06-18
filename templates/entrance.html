@@ -14,7 +14,7 @@
             <span class="popup__title">Вход</span>
             {% if messages %}
                             {% for message in messages %}
-                                <div>{{ message }}</div>
+                                <div>{{ error_message }}</div>
                             {% endfor %}
                         {% endif %}
             <form class="popup__form" action="{% url 'entrance' %}" method="post">

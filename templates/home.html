@@ -57,7 +57,7 @@
                 <div class="list_menu">
                     <ul>
                         {% if user.is_authenticated %}
-                            <li><a href="#">Личные данные</a></li>
+                            <li><a href="{% url 'account' %}">Личные данные</a></li>
                             <li><a href="#">Избранное</a></li>
                             <li><a href="#">Корзина</a></li>
                             <li><a href="#">Весь каталог</a></li>

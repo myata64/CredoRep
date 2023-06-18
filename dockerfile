@@ -15,7 +15,7 @@ RUN pip install -r requirements.txt
 # Копирование файлов проекта в рабочую директорию
 COPY . /code/
 
-RUN python manage.py makemigrations
+RUN python manage.py makemigrations --noinput
 
 # Запуск сервера Django
 CMD python manage.py migrate && python manage.py runserver 0.0.0.0:8000

@@ -1,11 +1,15 @@
 from django.contrib import admin
-from .models import UserProfile, Category, Product
-from .forms import UserProfileForm, CategoryForm, ProductForm
+from .models import User, Category, Product
+from .forms import UserForm, CategoryForm, ProductForm
 
 
-@admin.register(UserProfile)
-class PersonAdmin(admin.ModelAdmin):
-    form = UserProfileForm
+class UserAdmin(admin.ModelAdmin):
+    readonly_fields = ('username', 'email', 'phone_number',)
+
+
+@admin.register(User)
+class UserAdmin(admin.ModelAdmin):
+    form = UserForm
     pass
 
 

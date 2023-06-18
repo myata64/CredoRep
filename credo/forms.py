@@ -1,11 +1,11 @@
 from django import forms
-from .models import UserProfile, Category, Product
+from .models import User, Category, Product
 
 
-class UserProfileForm(forms.ModelForm):
+class UserForm(forms.ModelForm):
     class Meta:
-        model = UserProfile
-        fields = '__all__'
+        model = User
+        fields = ['username', 'phone_number', 'email', 'password']
 
 
 class CategoryForm(forms.ModelForm):

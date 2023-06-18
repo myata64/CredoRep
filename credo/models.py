@@ -1,18 +1,16 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
 
 
 # Пользователь
 class User(models.Model):
     username = models.CharField(max_length=255)
-    email = models.EmailField()
-
-
-class UserProfile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    phone_number = models.CharField(max_length=20)
+    email = models.EmailField(max_length=255)
+    phone_number = models.CharField(max_length=20, default='')
+    password = models.CharField(max_length=200, default=0)
 
     def __str__(self):
-        return self.user.username
+        return self.username
 
 
 # Товары
@@ -37,7 +35,3 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name_product
-
-# class Cart(models.Model):
-#     user = models.OneToOneField(UserProfile, on_delete=models.CASCADE)
-#     product
