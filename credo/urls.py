@@ -16,12 +16,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from . import views
+from . import views, settings
+from django.conf.urls.static import static
 
-app_name = 'account'
+app_name = 'credo'
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('account/', views.account, name='account'),
-    path('', views.home, name='home')
-]
+                  path('admin/', admin.site.urls),
+                  path('', views.home, name='home'),
+                  path('account/', views.account, name='account'),
+                  path('entrance/', views.entrance, name='entrance'),
+                  path('register/', views.register, name='register'),
+                  path('logout/', views.logout_view, name='logout'),
+                  path('shoes/', views.shoes, name='shoes'),
+                  path('product/', views.newbalance, name='product'),
+              ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
