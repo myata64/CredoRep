@@ -4,6 +4,7 @@ from django.contrib import messages
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth import authenticate, login, logout
 from django.views.decorators.csrf import csrf_protect
+# from .models import User, Product
 
 
 def home(request):
@@ -19,7 +20,8 @@ def entrance(request):
 
 
 def shoes(request):
-    return render(request, 'shoes.html')
+    products = Product.objects.all()
+    return render(request, 'shoes.html', {'products': products})
 
 
 def newbalance(request):

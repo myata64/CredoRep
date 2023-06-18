@@ -12,6 +12,11 @@
         <div class="popup__close-area close-popup"></div>
         <div class="popup__content">
             <span class="popup__title">Вход</span>
+            {% if messages %}
+                            {% for message in messages %}
+                                <div>{{ message }}</div>
+                            {% endfor %}
+                        {% endif %}
             <form class="popup__form" action="{% url 'entrance' %}" method="post">
                 {% csrf_token %}
                 <div class="popup__field">

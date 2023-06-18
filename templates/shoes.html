@@ -91,8 +91,10 @@
     <section class="main-home">
         <div class='wrapper'>
             <div class='card'>
+                {% for product in products %}
                 <img class='card-img' src='{% static 'img/nb1.jpg' %}'>
-                <div class='card-title'>NewBalance 990</div>
+                <div class='card-title'>{{ product.name_product }}</div>
+                {% endfor %}
                 <div class='btn-keeper'>
                     <a class='btn' href='{% url 'product' %}'>Подробнее</a>
                 </div>
