@@ -1,12 +1,6 @@
 from django.contrib import admin
-from .models import UserProfile, Category, Product
-from .forms import UserProfileForm, CategoryForm, ProductForm
-
-
-@admin.register(UserProfile)
-class PersonAdmin(admin.ModelAdmin):
-    form = UserProfileForm
-    pass
+from .models import Category, Product
+from .forms import CategoryForm, ProductForm
 
 
 @admin.register(Product)

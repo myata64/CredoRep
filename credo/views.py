@@ -1,10 +1,10 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth.forms import User
+# from django.contrib.auth.forms import User
 from django.contrib import messages
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth import authenticate, login, logout
 from django.views.decorators.csrf import csrf_protect
-# from .models import User, Product
+from .models import User, Product
 
 
 def home(request):
@@ -30,7 +30,7 @@ def newbalance(request):
 
 def register(request):
     if request.method == 'POST':
-        username = request.POST['email']
+        # username = request.POST['email']
         email = request.POST['email']
         password = request.POST['password']
         confirm_password = request.POST['confirm_password']

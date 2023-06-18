@@ -1,11 +1,5 @@
 from django import forms
-from .models import UserProfile, Category, Product
-
-
-class UserProfileForm(forms.ModelForm):
-    class Meta:
-        model = UserProfile
-        fields = '__all__'
+from .models import Category, Product
 
 
 class CategoryForm(forms.ModelForm):

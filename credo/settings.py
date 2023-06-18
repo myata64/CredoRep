@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'credo',
 ]
+AUTH_USER_MODEL = 'credo.User'
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
